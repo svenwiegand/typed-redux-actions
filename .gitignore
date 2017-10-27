@@ -5,4 +5,7 @@
 /npm-debug.log
 /docs/*
 !/docs/globals.html
+
+/yarn*.log
+/npm*.log
 /*.tgz
