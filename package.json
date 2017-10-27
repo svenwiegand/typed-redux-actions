@@ -17,7 +17,7 @@
     "coverage": "yarn test -- --coverage --no-cache",
     "coverage:watch": "yarn run coverage -- --watch",
     "prepareRelease": "yarn run build && yarn test && yarn run doc",
-    "release": "standard-version && yarn pack",
+    "release": "standard-version",
     "doc": "typedoc src/index.ts"
   },
   "repository": {
