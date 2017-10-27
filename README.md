@@ -1,7 +1,7 @@
 [![npm version](https://badge.fury.io/js/typed-redux-actions.svg)](https://badge.fury.io/js/typed-redux-actions) [![Build Status](https://travis-ci.org/svenwiegand/typed-redux-actions.svg?branch=master)](https://travis-ci.org/svenwiegand/typed-redux-actions) [![Coverage Status](https://coveralls.io/repos/github/svenwiegand/typed-redux-actions/badge.svg?branch=master)](https://coveralls.io/github/svenwiegand/typed-redux-actions?branch=master)
 
 # typed-redux-actions
-This is a tiny (~60 LOCs) and dependency free (except [Redux](http://redux.js.org/)) [TypeScript](https://www.typescriptlang.org/) library that helps you to concisely specify actions and process them in a typesafe way. This is what you get:
+This is a tiny and dependency free (except [Redux](http://redux.js.org/)) [TypeScript](https://www.typescriptlang.org/) library that helps you to concisely specify actions and process them in a typesafe way. This is what you get:
 
 - Concisely specify strongly typed Redux conform actions saving boilerplate code.
 - Type safely process these actions in the reducer.
@@ -14,18 +14,18 @@ Here is what you have to do when _not_ using this library.
 ```typescript
 // (1)
 enum ActionType {
-  set = 'SET',
-  increment = 'INCREMENT'
+  setCounter = 'COUNTER_SET',
+  incrementCounter = 'COUNTER_INCREMENT'
 }
 
 // (2)
 interface SetAction extends Redux.Action {
-  readonly type: typeof ActionType.set;
+  readonly type: typeof ActionType.setCounter;
   readonly value: number;
 }
 
 interface IncrementAction extends Redux.Action {
-  readonly type: typeof ActionType.increment;
+  readonly type: typeof ActionType.incrementCounter;
   readonly increment: number;
 }
 
@@ -33,16 +33,16 @@ interface IncrementAction extends Redux.Action {
 type NumberAction = SetAction | IncrementAction;
 
 // (4)
-function createSetAction(value: number): SetAction {
+function setCounter(value: number): SetAction {
   return {
-    type: ActionType.set,
+    type: ActionType.setCounter,
     value: value
   }
 }
 
-function createIncrementAction(increment: number): IncrementAction {
+function incrementCounter(increment: number): IncrementAction {
   return {
-    type: ActionType.increment,
+    type: ActionType.incrementCounter,
     increment: increment
   }
 }
@@ -50,14 +50,14 @@ function createIncrementAction(increment: number): IncrementAction {
 // (5)
 function reduceNumberAction(state: number, action: NumberAction): number {
   switch(action.type) {
-    case ActionType.set: return action.value;
-    case ActionType.increment: return state + action.increment;
+    case ActionType.setCounter: return action.value;
+    case ActionType.incrementCounter: return state + action.increment;
   }
 }
 
 // (6)
 function isNumberAction(action: Redux.AnyAction): action is NumberAction {
-  return action.type === ActionType.set || action.type === ActionType.increment;
+  return action.type === ActionType.setCounter || action.type === ActionType.incrementCounter;
 }
 
 function reduce(state: number, action: Redux.AnyAction): number {
@@ -102,36 +102,36 @@ This library provides us some tools to reduce the boilerplate shown above. Lets 
 ```typescript
 // (1)
 enum ActionType {
-  set = 'SET',
-  increment = 'INCREMENT'
+  setCounter = 'COUNTER_SET',
+  incrementCounter = 'COUNTER_INCREMENT'
 }
 
 // (2)
-function createSetAction(value: number): SetAction {
+function setCounter(value: number): SetAction {
   return {
-    type: ActionType.set as typeof ActionType.set,
+    type: ActionType.setCounter as typeof ActionType.setCounter,
     value: value
   }
 }
 
-function createIncrementAction(increment: number): IncrementAction {
+function incrementCounter(increment: number): IncrementAction {
   return {
-    type: ActionType.increment as typeof ActionType.increment,
+    type: ActionType.incrementCounter as typeof ActionType.incrementCounter,
     increment: increment
   }
 }
 
 // (3)
 const filter = actionFilter(ActionType, [
-  declareAction(createSetAction),
-  declareAction(createIncrementAction)
+  declareAction(setCounter),
+  declareAction(incrementCounter)
 ]);
 
 // (4)
 function reduceNumberAction(state: number, action: typeof filter.action): number {
   switch(action.type) {
-    case ActionType.set: return action.value;
-    case ActionType.increment: return state + action.increment;
+    case ActionType.setCounter: return action.value;
+    case ActionType.incrementCounter: return state + action.increment;
   }
 }
 
@@ -145,7 +145,7 @@ Lets see what's going on here and what we save:
 1. The definition of the possible action `type` values stays unchanged.
 2. Did you notice how we've skipped the whole declaration of the action types and the union type here? **Did you notice?** We're directly declaring our action creators.
 
-   **Notice:** The `ActionType.set as typeof ActionType.set` construct ensures that the `type` property is of the literal type produced by the enum. Alternatively you could use `type: ActionType.set = ActionType.set` or `type = <ActionType.set> ActionType.set`. Use whatever you prefer, but don't leave off the type as `type` will then be of type `string` and our discriminated unions wont work anymore.
+   **Notice:** The `ActionType.setCounter as typeof ActionType.setCounter` construct ensures that the `type` property is of the literal type produced by the enum. Alternatively you could use `type: ActionType.setCounter = ActionType.setCounter` or `type = <ActionType.setCounter> ActionType.setCounter`. Use whatever you prefer, but don't leave off the type as `type` will then be of type `string` and our discriminated unions wont work anymore.
 3. We now specify our `ActionFilter` by providing our `ActionType` enumeration and our action creators (wrapped in a necessary call to `declareAction`). This is where all the type magic (okay, its only [type inference](https://www.typescriptlang.org/docs/handbook/type-inference.html)) happens. The resulting object serves two purposes:
    - it infers the types of the actions from the action creators and provides the resulting union type in its `action` property.
    - its `matches(action: Redux.AnyAction) action is <Action>` method provides a [typeguard](https://www.typescriptlang.org/docs/handbook/advanced-types.html) to check whether an action belongs to our union. This typeguard is used by the `ActionReducer` to decide whether to handle the action or simply return the provided state.
@@ -170,3 +170,6 @@ The following has nothing to do with Redux actions but is nevertheless helpful f
 ```typescript
 createStore(Reducer, initialState, reduxDevToolsEnhancer());
 ```
+
+## API Documentation
+This library comes with a [full API documentation](https://rawgit.com/svenwiegand/typed-redux-actions/master/docs/globals.html).

@@ -3,5 +3,6 @@
 /dist
 /node_modules
 /npm-debug.log
-/docs
+/docs/*
+!/docs/globals.html
 /*.tgz

@@ -13,7 +13,7 @@
   "scripts": {
     "build": "webpack || echo not ok",
     "test": "jest",
-    "test:watch": "yarn test -- --watch",
+    "test:watch": "npm test -- --watch",
     "coverage": "yarn test -- --coverage --no-cache",
     "coverage:watch": "yarn run coverage -- --watch",
     "prepareRelease": "yarn run build && yarn test && yarn run doc",

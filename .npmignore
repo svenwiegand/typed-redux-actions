@@ -1,5 +1,6 @@
 *
 !dist/**/*
+!/docs/globals.html
 !package.json
 !README.md
 !LICENSE

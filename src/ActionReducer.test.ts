@@ -1,26 +1,26 @@
 import { actionFilter, ActionReducer, declareAction } from '.';
 
 enum ActionType {
-    increment = 'INCREMENT',
-    reset = 'RESET'
+    increment = 'COUNTER_INCREMENT',
+    reset = 'COUNTER_RESET'
 }
 
-function createIncrement(increment: number) {
+function incrementCounter(increment: number) {
     return {
         type: ActionType.increment as typeof ActionType.increment,
         increment: increment
     };
 }
 
-function createReset() {
+function resetCounter() {
     return {
         type: ActionType.reset as typeof ActionType.reset
     }
 }
 
 const filter = actionFilter(ActionType, [
-    declareAction(createIncrement),
-    declareAction(createReset)
+    declareAction(incrementCounter),
+    declareAction(resetCounter)
 ]);
 
 const reducer = new ActionReducer(filter, 0, (state: number, action: typeof filter.action) => {
@@ -36,9 +36,9 @@ describe('ActionReducer', () => {
     });
 
     it('processes known actions', () => {
-        const newState = reducer.reduce(0, createIncrement(2));
+        const newState = reducer.reduce(0, incrementCounter(2));
         expect(newState).toBe(2);
-        expect(reducer.reduce(newState, createReset())).toBe(0);
+        expect(reducer.reduce(newState, resetCounter())).toBe(0);
     });
 
     it('returns the provided state for unknown actions', () => {
