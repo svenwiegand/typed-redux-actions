@@ -91,7 +91,13 @@ So when adding a new action we have to do the following:
 - Add the check of the `type` property to the `isNumberAction` function (easy to forget)
 - Add the handling for this action to the reducer (the compiler will remember us to do so)
 
-# How to use _typed-redux-actions_
+## Installation
+Add _typed-redux-actions_ to your project:
+```
+npm install --save typed-redux-actions
+```
+
+## How to use _typed-redux-actions_
 This library provides us some tools to reduce the boilerplate shown above. Lets implment the same solution again:
 ```typescript
 // (1)
