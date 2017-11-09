@@ -21,6 +21,11 @@ export interface BaseAction extends Redux.Action {
 }
 
 /**
+ * Action with an undefined type. Especially helpful for initialization and testing.
+ */
+export const undefinedAction: BaseAction = { type: {} };
+
+/**
  * Describes the types of an action.
  */
 export interface ActionDeclaration<Action extends BaseAction> {
@@ -121,11 +126,13 @@ export class ActionReducer<State, Action extends BaseAction> {
      * other action.
      * @param state the state to reduce
      * @param action the action to apply to the state
-     * @returns the resulting state if the `action` is supported by this reducer's [[ActionFilter]] or `state`
-     *     otherwise.
+     * @returns the initial state if `state` is undefined or the resulting state if the `action` is supported by this
+     *     reducer's [[ActionFilter]] or `state` otherwise.
      */
-    readonly reduce = (state: State, action: Redux.AnyAction) => {
-        if (this.filter.matches(action)) {
+    readonly reduce = (state: State | undefined, action: Redux.AnyAction) => {
+        if (typeof state === 'undefined') {
+            return this.initialState;
+        } else if (this.filter.matches(action)) {
             return this.reduceAction(state, action);
         } else {
             return state;
