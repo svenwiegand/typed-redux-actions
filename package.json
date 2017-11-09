@@ -16,7 +16,7 @@
     "test:watch": "npm test -- --watch",
     "coverage": "yarn test -- --coverage --no-cache",
     "coverage:watch": "yarn run coverage -- --watch",
-    "prepareRelease": "yarn run build && yarn test && yarn run doc",
+    "prepareRelease": "yarn run build && yarn run coverage && yarn run doc && git status",
     "release": "standard-version",
     "doc": "typedoc src/index.ts"
   },
