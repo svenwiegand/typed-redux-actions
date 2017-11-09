@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.2.0"></a>
+# [1.2.0](https://github.com/svenwiegand/typed-redux-actions/compare/v1.1.1...v1.2.0) (2017-11-09)
+
+
+### Bug Fixes
+
+* Fix reducer's type declaration to allow undefined state parameter. ([7d990ad](https://github.com/svenwiegand/typed-redux-actions/commit/7d990ad))
+
+
+### Features
+
+* Run coverage when building release and remember about uncommitted files. ([d202083](https://github.com/svenwiegand/typed-redux-actions/commit/d202083))
+
+
+
 <a name="1.1.1"></a>
 ## [1.1.1](https://github.com/svenwiegand/typed-redux-actions/compare/v1.1.0...v1.1.1) (2017-11-09)
 
