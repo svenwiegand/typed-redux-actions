@@ -129,7 +129,7 @@ export class ActionReducer<State, Action extends BaseAction> {
      * @returns the initial state if `state` is undefined or the resulting state if the `action` is supported by this
      *     reducer's [[ActionFilter]] or `state` otherwise.
      */
-    readonly reduce = (state: State | undefined, action: Redux.AnyAction) => {
+    reduce(state: State | undefined, action: Redux.AnyAction): State {
         if (typeof state === 'undefined') {
             return this.initialState;
         } else if (this.filter.matches(action)) {
