@@ -105,6 +105,14 @@ export function actionFilter<Declarations extends ActionDeclaration<BaseAction>[
 }
 
 /**
+ * Type for [[ActionReducer]]'s `reduce` function.
+ *
+ * (Need to explicitly specify this as `undefined` option for state will be missing in generated type declarations
+ * otherwise)
+ */
+export type Reduce<State> = (state: State | undefined, action: Redux.AnyAction) => State;
+
+/**
  * A reducer able to handle actions of the specified type. Its [[reduce]] method conforms to Redux's expectation of a
  * reducer.
  */
@@ -129,7 +137,7 @@ export class ActionReducer<State, Action extends BaseAction> {
      * @returns the initial state if `state` is undefined or the resulting state if the `action` is supported by this
      *     reducer's [[ActionFilter]] or `state` otherwise.
      */
-    reduce(state: State | undefined, action: Redux.AnyAction): State {
+    reduce: Reduce<State> = (state, action): State => {
         if (typeof state === 'undefined') {
             return this.initialState;
         } else if (this.filter.matches(action)) {

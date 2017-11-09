@@ -924,6 +924,9 @@ img { max-width: 100%; }
 		<li class=" tsd-kind-type-alias tsd-is-external">
 			<a href="globals.html#actiontypeenum" class="tsd-kind-icon">Action<wbr>Type<wbr>Enum</a>
 		</li>
+		<li class=" tsd-kind-type-alias tsd-is-external">
+			<a href="globals.html#reduce" class="tsd-kind-icon">Reduce</a>
+		</li>
 		<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
 			<a href="globals.html#actionfilter" class="tsd-kind-icon">action<wbr>Filter</a>
 		</li>
@@ -966,6 +969,7 @@ img { max-width: 100%; }
 						<h3>Type aliases</h3>
 						<ul class="tsd-index-list">
 							<li class="tsd-kind-type-alias tsd-is-external"><a href="globals.html#actiontypeenum" class="tsd-kind-icon">Action<wbr>Type<wbr>Enum</a></li>
+							<li class="tsd-kind-type-alias tsd-is-external"><a href="globals.html#reduce" class="tsd-kind-icon">Reduce</a></li>
 						</ul>
 					</section>
 					<section class="tsd-index-section tsd-is-external">
@@ -993,7 +997,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">Action<wbr>Type<wbr>Enum<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/svenwiegand/typed-redux-actions/blob/b5350bb/src/ActionReducer.ts#L14">ActionReducer.ts:14</a></li>
+						<li>Defined in <a href="https://github.com/svenwiegand/typed-redux-actions/blob/7f008eb/src/ActionReducer.ts#L14">ActionReducer.ts:14</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -1013,6 +1017,47 @@ img { max-width: 100%; }
 					</ul>
 				</div>
 			</section>
+			<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-is-external">
+				<a name="reduce" class="tsd-anchor"></a>
+				<h3>Reduce</h3>
+				<div class="tsd-signature tsd-kind-icon">Reduce<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/svenwiegand/typed-redux-actions/blob/7f008eb/src/ActionReducer.ts#L113">ActionReducer.ts:113</a></li>
+					</ul>
+				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Type for <a href="classes/actionreducer.html">ActionReducer</a>&#39;s <code>reduce</code> function.</p>
+					</div>
+					<p>(Need to explicitly specify this as <code>undefined</code> option for state will be missing in generated type declarations
+					otherwise)</p>
+				</div>
+				<div class="tsd-type-declaration">
+					<h4>Type declaration</h4>
+					<ul class="tsd-parameters">
+						<li class="tsd-parameter-siganture">
+							<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-type-alias tsd-is-not-exported">
+								<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>state<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span>, action<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AnyAction</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">State</span></li>
+							</ul>
+							<ul class="tsd-descriptions">
+								<li class="tsd-description">
+									<h4 class="tsd-parameters-title">Parameters</h4>
+									<ul class="tsd-parameters">
+										<li>
+											<h5>state: <span class="tsd-signature-type">State</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h5>
+										</li>
+										<li>
+											<h5>action: <span class="tsd-signature-type">AnyAction</span></h5>
+										</li>
+									</ul>
+									<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">State</span></h4>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</section>
 		</section>
 		<section class="tsd-panel-group tsd-member-group tsd-is-external">
 			<h2>Functions</h2>
@@ -1026,7 +1071,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/svenwiegand/typed-redux-actions/blob/b5350bb/src/ActionReducer.ts#L100">ActionReducer.ts:100</a></li>
+								<li>Defined in <a href="https://github.com/svenwiegand/typed-redux-actions/blob/7f008eb/src/ActionReducer.ts#L100">ActionReducer.ts:100</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1074,7 +1119,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/svenwiegand/typed-redux-actions/blob/b5350bb/src/ActionReducer.ts#L46">ActionReducer.ts:46</a></li>
+								<li>Defined in <a href="https://github.com/svenwiegand/typed-redux-actions/blob/7f008eb/src/ActionReducer.ts#L46">ActionReducer.ts:46</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1131,7 +1176,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/svenwiegand/typed-redux-actions/blob/b5350bb/src/ReduxDevTools.ts#L17">ReduxDevTools.ts:17</a></li>
+								<li>Defined in <a href="https://github.com/svenwiegand/typed-redux-actions/blob/7f008eb/src/ReduxDevTools.ts#L17">ReduxDevTools.ts:17</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1165,7 +1210,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">undefined<wbr>Action<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/svenwiegand/typed-redux-actions/blob/b5350bb/src/ActionReducer.ts#L26">ActionReducer.ts:26</a></li>
+						<li>Defined in <a href="https://github.com/svenwiegand/typed-redux-actions/blob/7f008eb/src/ActionReducer.ts#L26">ActionReducer.ts:26</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -1179,7 +1224,7 @@ img { max-width: 100%; }
 					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/svenwiegand/typed-redux-actions/blob/b5350bb/src/ActionReducer.ts#L26">ActionReducer.ts:26</a></li>
+							<li>Defined in <a href="https://github.com/svenwiegand/typed-redux-actions/blob/7f008eb/src/ActionReducer.ts#L26">ActionReducer.ts:26</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
