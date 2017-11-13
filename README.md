@@ -166,10 +166,7 @@ Not only this saved us a lot of initial code. Also lets take a look at what we s
 So we've saved 50% of the necessary steps and all of the steps which are easy to forget. Not bad, huh?
 
 ## Bonus
-The following has nothing to do with Redux actions but is nevertheless helpful for Redux TypeScript developers: This library provides a `reduxDevToolsEnhancer()` function to initialize your Redux store, so that it uses the [redux-devtools-extension](https://github.com/zalmoxisus/redux-devtools-extension) if available in your browser. Use it like this when creating your Redux store:
-```typescript
-createStore(Reducer, initialState, reduxDevToolsEnhancer());
-```
+The following has nothing to do with Redux actions but is nevertheless helpful for Redux TypeScript developers: This library provides a `createStoreWithDevTools()` function to create your Redux store, so that it uses the [redux-devtools-extension](https://github.com/zalmoxisus/redux-devtools-extension) if available in your browser. Use it as a drop-in replacement for redux's `createStore()` function.
 
 ## API Documentation
 This library comes with a [full API documentation](https://rawgit.com/svenwiegand/typed-redux-actions/master/docs/globals.html).

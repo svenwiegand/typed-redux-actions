@@ -927,14 +927,14 @@ img { max-width: 100%; }
 		<li class=" tsd-kind-type-alias tsd-is-external">
 			<a href="globals.html#reduce" class="tsd-kind-icon">Reduce</a>
 		</li>
+		<li class=" tsd-kind-variable tsd-is-external">
+			<a href="globals.html#createstorewithdevtools" class="tsd-kind-icon">create<wbr>Store<wbr>With<wbr>Dev<wbr>Tools</a>
+		</li>
 		<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
 			<a href="globals.html#actionfilter" class="tsd-kind-icon">action<wbr>Filter</a>
 		</li>
 		<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
 			<a href="globals.html#declareaction" class="tsd-kind-icon">declare<wbr>Action</a>
-		</li>
-		<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
-			<a href="globals.html#reduxdevtoolsenhancer" class="tsd-kind-icon">redux<wbr>Dev<wbr>Tools<wbr>Enhancer</a>
 		</li>
 		<li class=" tsd-kind-object-literal tsd-is-external">
 			<a href="globals.html#undefinedaction" class="tsd-kind-icon">undefined<wbr>Action</a>
@@ -973,11 +973,16 @@ img { max-width: 100%; }
 						</ul>
 					</section>
 					<section class="tsd-index-section tsd-is-external">
+						<h3>Variables</h3>
+						<ul class="tsd-index-list">
+							<li class="tsd-kind-variable tsd-is-external"><a href="globals.html#createstorewithdevtools" class="tsd-kind-icon">create<wbr>Store<wbr>With<wbr>Dev<wbr>Tools</a></li>
+						</ul>
+					</section>
+					<section class="tsd-index-section tsd-is-external">
 						<h3>Functions</h3>
 						<ul class="tsd-index-list">
 							<li class="tsd-kind-function tsd-has-type-parameter tsd-is-external"><a href="globals.html#actionfilter" class="tsd-kind-icon">action<wbr>Filter</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter tsd-is-external"><a href="globals.html#declareaction" class="tsd-kind-icon">declare<wbr>Action</a></li>
-							<li class="tsd-kind-function tsd-has-type-parameter tsd-is-external"><a href="globals.html#reduxdevtoolsenhancer" class="tsd-kind-icon">redux<wbr>Dev<wbr>Tools<wbr>Enhancer</a></li>
 						</ul>
 					</section>
 					<section class="tsd-index-section tsd-is-external">
@@ -997,7 +1002,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">Action<wbr>Type<wbr>Enum<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/svenwiegand/typed-redux-actions/blob/7f008eb/src/ActionReducer.ts#L14">ActionReducer.ts:14</a></li>
+						<li>Defined in <a href="https://github.com/svenwiegand/typed-redux-actions/blob/3e1b6fb/src/ActionReducer.ts#L14">ActionReducer.ts:14</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -1023,7 +1028,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">Reduce<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/svenwiegand/typed-redux-actions/blob/7f008eb/src/ActionReducer.ts#L113">ActionReducer.ts:113</a></li>
+						<li>Defined in <a href="https://github.com/svenwiegand/typed-redux-actions/blob/3e1b6fb/src/ActionReducer.ts#L113">ActionReducer.ts:113</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -1060,6 +1065,25 @@ img { max-width: 100%; }
 			</section>
 		</section>
 		<section class="tsd-panel-group tsd-member-group tsd-is-external">
+			<h2>Variables</h2>
+			<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-external">
+				<a name="createstorewithdevtools" class="tsd-anchor"></a>
+				<h3>create<wbr>Store<wbr>With<wbr>Dev<wbr>Tools</h3>
+				<div class="tsd-signature tsd-kind-icon">create<wbr>Store<wbr>With<wbr>Dev<wbr>Tools<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">StoreCreator</span><span class="tsd-signature-symbol"> =&nbsp;/* tslint:disable-next-line */ /* istanbul ignore next */window[&#x27;devToolsExtension&#x27;] ? window[&#x27;devToolsExtension&#x27;]()(createStore) : createStore</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/svenwiegand/typed-redux-actions/blob/3e1b6fb/src/ReduxDevTools.ts#L7">ReduxDevTools.ts:7</a></li>
+					</ul>
+				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Drop-in replacement for Redux&#39;s <code>createStore()</code> function which will enhance the store using the
+						redux-devtools-extension if installed in your browser.</p>
+					</div>
+				</div>
+			</section>
+		</section>
+		<section class="tsd-panel-group tsd-member-group tsd-is-external">
 			<h2>Functions</h2>
 			<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter tsd-is-external">
 				<a name="actionfilter" class="tsd-anchor"></a>
@@ -1071,7 +1095,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/svenwiegand/typed-redux-actions/blob/7f008eb/src/ActionReducer.ts#L100">ActionReducer.ts:100</a></li>
+								<li>Defined in <a href="https://github.com/svenwiegand/typed-redux-actions/blob/3e1b6fb/src/ActionReducer.ts#L100">ActionReducer.ts:100</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1119,7 +1143,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/svenwiegand/typed-redux-actions/blob/7f008eb/src/ActionReducer.ts#L46">ActionReducer.ts:46</a></li>
+								<li>Defined in <a href="https://github.com/svenwiegand/typed-redux-actions/blob/3e1b6fb/src/ActionReducer.ts#L46">ActionReducer.ts:46</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1166,41 +1190,6 @@ img { max-width: 100%; }
 					</li>
 				</ul>
 			</section>
-			<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter tsd-is-external">
-				<a name="reduxdevtoolsenhancer" class="tsd-anchor"></a>
-				<h3>redux<wbr>Dev<wbr>Tools<wbr>Enhancer</h3>
-				<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter tsd-is-external">
-					<li class="tsd-signature tsd-kind-icon">redux<wbr>Dev<wbr>Tools<wbr>Enhancer&lt;State&gt;<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">StoreEnhancer</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
-				</ul>
-				<ul class="tsd-descriptions">
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/svenwiegand/typed-redux-actions/blob/7f008eb/src/ReduxDevTools.ts#L17">ReduxDevTools.ts:17</a></li>
-							</ul>
-						</aside>
-						<div class="tsd-comment tsd-typography">
-							<div class="lead">
-								<p>Easily allows you to init the redux-devtools-extension if installed in your browser when creating your Redux store.</p>
-							</div>
-							<p><strong>Usage:</strong></p>
-							<pre><code class="lang-typescript">createStore(Reducer, initialState, reduxDevToolsEnhancer());
-</code></pre>
-						</div>
-						<h4 class="tsd-type-parameters-title">Type parameters</h4>
-						<ul class="tsd-type-parameters">
-							<li>
-								<h4>State</h4>
-							</li>
-						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">StoreEnhancer</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">&gt;</span>
-							<span class="tsd-signature-symbol"> | </span>
-							<span class="tsd-signature-type">undefined</span>
-						</h4>
-						<p>the store enhancer that feeds the redux dev tools or <code>undefined</code> if the redux devtools are not installed.</p>
-					</li>
-				</ul>
-			</section>
 		</section>
 		<section class="tsd-panel-group tsd-member-group tsd-is-external">
 			<h2>Object literals</h2>
@@ -1210,7 +1199,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">undefined<wbr>Action<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/svenwiegand/typed-redux-actions/blob/7f008eb/src/ActionReducer.ts#L26">ActionReducer.ts:26</a></li>
+						<li>Defined in <a href="https://github.com/svenwiegand/typed-redux-actions/blob/3e1b6fb/src/ActionReducer.ts#L26">ActionReducer.ts:26</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -1224,7 +1213,7 @@ img { max-width: 100%; }
 					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/svenwiegand/typed-redux-actions/blob/7f008eb/src/ActionReducer.ts#L26">ActionReducer.ts:26</a></li>
+							<li>Defined in <a href="https://github.com/svenwiegand/typed-redux-actions/blob/3e1b6fb/src/ActionReducer.ts#L26">ActionReducer.ts:26</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
