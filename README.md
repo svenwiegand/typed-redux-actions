@@ -107,14 +107,14 @@ enum ActionType {
 }
 
 // (2)
-function setCounter(value: number): SetAction {
+function setCounter(value: number) {
   return {
     type: ActionType.setCounter as typeof ActionType.setCounter,
     value: value
   }
 }
 
-function incrementCounter(increment: number): IncrementAction {
+function incrementCounter(increment: number) {
   return {
     type: ActionType.incrementCounter as typeof ActionType.incrementCounter,
     increment: increment
