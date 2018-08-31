@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.0.1"></a>
+## [2.0.1](https://github.com/svenwiegand/typed-redux-actions/compare/v2.0.0...v2.0.1) (2018-08-31)
+
+
+### Bug Fixes
+
+* Removed `index.browser.js` as it isn't required. ([4230fd5](https://github.com/svenwiegand/typed-redux-actions/commit/4230fd5472ce9726d56b4d16a9a9dba906e22b72))
+
+
 <a name="2.0.0"></a>
 # [2.0.0](https://github.com/svenwiegand/typed-redux-actions/compare/v1.2.1...v2.0.0) (2017-11-13)
 
