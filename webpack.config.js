@@ -1,6 +1,5 @@
 var nodeExternals = require('webpack-node-externals');
 var webpack = require('webpack');
-var browserify = require('browserify');
 var path = require('path');
 var fs = require('fs');
 var os = require('os');
@@ -47,9 +46,6 @@ var percentage_handler = function handler(percentage, msg) {
     /* Build Started */
     outputCleanup(libPath());
     console.log('Build started... Good luck!');
-  } else if ( 1.0 === percentage ) {
-    // TODO: No Error detection. :(
-    create_browser_version(webpack_opts.output.filename);
   }
 }
 
@@ -96,23 +92,6 @@ var webpack_opts = {
     }),
     new webpack.ProgressPlugin(percentage_handler)
   ],
-}
-
-var create_browser_version = function (inputJs) {
-  let outputName = inputJs.replace(/\.[^/.]+$/, '');
-  outputName = `${outputName}.browser.js`;
-  console.log('Creating browser version ...');
-
-  let b = browserify(inputJs, {
-    standalone: LIB_NAME,
-  });
-
-  b.bundle(function(err, src) {
-    if ( err != null ) {
-      console.error('Browserify error:');
-      console.error(err);
-    }
-  }).pipe(fs.createWriteStream(outputName));
 }
 
 module.exports = webpack_opts;
